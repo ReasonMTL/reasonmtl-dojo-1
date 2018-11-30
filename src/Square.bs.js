@@ -2,10 +2,32 @@
 'use strict';
 
 var Block = require("bs-platform/lib/js/block.js");
+var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
 var component = ReasonReact.reducerComponent("Square-ReactTemplate");
+
+function styleSheet(color) {
+  return {
+          backgroundColor: color,
+          height: "120px",
+          width: "120px"
+        };
+}
+
+function bumpColor(color) {
+  switch (color) {
+    case "blue" : 
+        return "white";
+    case "red" : 
+        return "blue";
+    case "white" : 
+        return "pink";
+    default:
+      return "red";
+  }
+}
 
 function make(_children) {
   return /* record */[
@@ -13,25 +35,43 @@ function make(_children) {
           /* reactClassInternal */component[/* reactClassInternal */1],
           /* handedOffState */component[/* handedOffState */2],
           /* willReceiveProps */component[/* willReceiveProps */3],
-          /* didMount */component[/* didMount */4],
+          /* didMount */(function (self) {
+              setInterval((function (param) {
+                      return Curry._1(self[/* send */3], /* BumpColor */0);
+                    }), 1000);
+              return /* () */0;
+            }),
           /* didUpdate */component[/* didUpdate */5],
           /* willUnmount */component[/* willUnmount */6],
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
-          /* render */(function (param) {
-              return React.createElement("div", undefined);
+          /* render */(function (self) {
+              return React.createElement("div", {
+                          style: styleSheet(self[/* state */1][/* color */0])
+                        });
             }),
           /* initialState */(function (_state) {
               return /* record */[/* color */"red"];
             }),
           /* retainedProps */component[/* retainedProps */11],
-          /* reducer */(function (action, _state) {
-              return /* Update */Block.__(0, [/* record */[/* color */action[0]]]);
+          /* reducer */(function (action, state) {
+              if (action) {
+                var color = action[0];
+                console.log(/* tuple */[
+                      color,
+                      state
+                    ]);
+                return /* Update */Block.__(0, [/* record */[/* color */color]]);
+              } else {
+                return /* Update */Block.__(0, [/* record */[/* color */bumpColor(state[/* color */0])]]);
+              }
             }),
           /* jsElementWrapped */component[/* jsElementWrapped */13]
         ];
 }
 
 exports.component = component;
+exports.styleSheet = styleSheet;
+exports.bumpColor = bumpColor;
 exports.make = make;
 /* component Not a pure module */
