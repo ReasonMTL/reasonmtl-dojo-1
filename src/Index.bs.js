@@ -3,8 +3,15 @@
 
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Square$ReactTemplate = require("./Square.bs.js");
+var Grid$ReactTemplate = require("./Grid.bs.js");
 
-ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, Square$ReactTemplate.make(/* array */[])), "square");
+ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, Grid$ReactTemplate.make(/* array */[
+              "green",
+              "pink",
+              "blue",
+              "pink",
+              "pink",
+              "pink"
+            ], /* array */[])), "square");
 
 /*  Not a pure module */

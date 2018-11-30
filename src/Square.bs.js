@@ -29,7 +29,7 @@ function bumpColor(color) {
   }
 }
 
-function make(_children) {
+function make(initialColor, _children) {
   return /* record */[
           /* debugName */component[/* debugName */0],
           /* reactClassInternal */component[/* reactClassInternal */1],
@@ -51,7 +51,7 @@ function make(_children) {
                         });
             }),
           /* initialState */(function (_state) {
-              return /* record */[/* color */"red"];
+              return /* record */[/* color */initialColor];
             }),
           /* retainedProps */component[/* retainedProps */11],
           /* reducer */(function (action, state) {

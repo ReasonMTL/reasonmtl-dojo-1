@@ -22,9 +22,9 @@ let bumpColor = color =>
   | _ => "red"
   };
 
-let make = _children => {
+let make = (~initialColor: string, _children) => {
   ...component,
-  initialState: _state => {color: "red"},
+  initialState: _state => {color: initialColor},
   reducer: (action, state) =>
     switch (action) {
     | ChangeColor(color) =>
