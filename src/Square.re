@@ -5,6 +5,14 @@ type action =
 
 let component = ReasonReact.reducerComponent(__MODULE__);
 
+let styleSheet = color =>
+  ReactDOMRe.Style.make(
+    ~backgroundColor=color,
+    ~width="120px",
+    ~height="120px",
+    ()
+  )
+
 let make = _children => {
   ...component,
   initialState: _state => {color: "red"},
@@ -12,5 +20,5 @@ let make = _children => {
     switch (action) {
     | ChangeColor(color) => ReasonReact.Update({color: color})
     },
-  render: _ => <div />,
+  render: self => <div style=styleSheet(self.state.color)></div>
 };
