@@ -19,7 +19,7 @@ function make(colors, _children) {
           /* willUnmount */component[/* willUnmount */6],
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
-          /* render */(function (self) {
+          /* render */(function (_self) {
               return React.createElement("div", undefined, $$Array.map((function (c) {
                                 return ReasonReact.element(undefined, undefined, Square$ReactTemplate.make(c, /* array */[]));
                               }), colors));
