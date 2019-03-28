@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/Users/thomas/Downloads/reasonmtl-dojo-1/build/";
+/******/ 	__webpack_require__.p = "/Users/oskar/github/reasonmtl/reasonmtl-dojo-1/build/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
