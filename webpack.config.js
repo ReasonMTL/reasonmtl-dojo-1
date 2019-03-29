@@ -13,8 +13,6 @@ module.exports = {
   mode: isProd ? 'production' : 'development',
   output: {
     path: outputDir,
-    publicPath: outputDir,
-    // filename: '[name].[hash:8].js',
     filename: 'Index.js',
     sourceMapFilename: '[name].[hash:8].map',
     chunkFilename: '[id].[hash:8].js'
