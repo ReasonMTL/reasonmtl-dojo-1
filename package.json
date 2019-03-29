@@ -16,12 +16,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-piano": "^3.1.2",
+    "react-trend": "^1.2.4",
     "reason-react": ">=0.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "bs-platform": "^4.0.7",
     "gentype": "^2.17.0",
     "html-webpack-plugin": "^3.2.0",
