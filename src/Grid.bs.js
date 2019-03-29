@@ -3,6 +3,7 @@
 
 var $$Array = require("bs-platform/lib/js/array.js");
 var React = require("react");
+var SynthGen = require("./Synth.gen");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Square$ReactTemplate = require("./Square.bs.js");
 
@@ -20,7 +21,7 @@ function make(colors, _children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("div", undefined, $$Array.map((function (c) {
+              return React.createElement("div", undefined, ReasonReact.element(undefined, undefined, SynthGen.make(/* array */[])), $$Array.map((function (c) {
                                 return ReasonReact.element(undefined, undefined, Square$ReactTemplate.make(c, /* array */[]));
                               }), colors));
             }),
